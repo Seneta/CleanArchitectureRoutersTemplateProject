@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aR8-lB-8X1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="unQ-by-Fub">
+            <objects>
+                <navigationController storyboardIdentifier="ItemsListNavController" id="tVK-JC-qm0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O1P-Ug-63y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aR8-lB-8X1" kind="relationship" relationship="rootViewController" id="IkU-dQ-fx6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kb6-kn-xbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-677" y="151"/>
+        </scene>
+        <!--Items-->
+        <scene sceneID="URi-Ly-21X">
+            <objects>
+                <viewController storyboardIdentifier="ItemsListViewController" id="aR8-lB-8X1" customClass="ItemsListViewController" customModule="CleanArchRoutersTemplateProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XVk-wD-SjF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hr5-RG-O4O">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hr5-RG-O4O" firstAttribute="top" secondItem="txS-Jk-flU" secondAttribute="top" id="FHL-aD-ijX"/>
+                            <constraint firstItem="txS-Jk-flU" firstAttribute="bottom" secondItem="hr5-RG-O4O" secondAttribute="bottom" id="ifD-ka-EID"/>
+                            <constraint firstItem="txS-Jk-flU" firstAttribute="trailing" secondItem="hr5-RG-O4O" secondAttribute="trailing" id="laB-na-hOh"/>
+                            <constraint firstItem="hr5-RG-O4O" firstAttribute="leading" secondItem="txS-Jk-flU" secondAttribute="leading" id="qdc-t9-fJd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="txS-Jk-flU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Items" id="Uv5-zW-dqV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hL4-ce-RXF">
+                            <connections>
+                                <action selector="addTapped:" destination="aR8-lB-8X1" id="be8-lB-xrN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hr5-RG-O4O" id="3dt-nO-7WS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NQU-cr-ou3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="151"/>
+        </scene>
+    </scenes>
+</document>
