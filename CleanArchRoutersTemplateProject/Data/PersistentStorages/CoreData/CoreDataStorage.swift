@@ -34,7 +34,7 @@ class CoreDataStorage: NSObject {
         return container
     }()
     
-    private var context: NSManagedObjectContext {
+    var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     

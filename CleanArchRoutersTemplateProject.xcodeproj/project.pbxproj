@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F26652D23B098400010301F /* AppNotificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26652C23B098400010301F /* AppNotificationsUseCase.swift */; };
+		7F26653023B099430010301F /* AppNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26652F23B099430010301F /* AppNotificationCenter.swift */; };
+		7F26653323B0A2080010301F /* NSManagedObject+stringName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F26653223B0A2080010301F /* NSManagedObject+stringName.swift */; };
 		7F54B35A23AB8A29000CB9D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F54B35923AB8A29000CB9D3 /* AppDelegate.swift */; };
 		7F54B36323AB8A2A000CB9D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F54B36223AB8A2A000CB9D3 /* Assets.xcassets */; };
 		7F54B36623AB8A2A000CB9D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F54B36423AB8A2A000CB9D3 /* LaunchScreen.storyboard */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F26652C23B098400010301F /* AppNotificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNotificationsUseCase.swift; sourceTree = "<group>"; };
+		7F26652F23B099430010301F /* AppNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNotificationCenter.swift; sourceTree = "<group>"; };
+		7F26653223B0A2080010301F /* NSManagedObject+stringName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+stringName.swift"; sourceTree = "<group>"; };
 		7F54B35623AB8A29000CB9D3 /* CleanArchRoutersTemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchRoutersTemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54B35923AB8A29000CB9D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F54B36223AB8A2A000CB9D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F26652E23B099270010301F /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				7F26652F23B099430010301F /* AppNotificationCenter.swift */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		7F26653123B0A1E50010301F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7F26653223B0A2080010301F /* NSManagedObject+stringName.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7F54B34D23AB8A29000CB9D3 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +166,7 @@
 		7F54B36F23AB8BB1000CB9D3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7F26652E23B099270010301F /* NotificationCenter */,
 				7F54B37423AB8C73000CB9D3 /* PersistentStorages */,
 				7F54B37323AB8C6D000CB9D3 /* Network */,
 			);
@@ -163,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7F54B38823AB9091000CB9D3 /* ItemsUseCase.swift */,
+				7F26652C23B098400010301F /* AppNotificationsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -296,6 +320,7 @@
 		7F54B3A323AB9381000CB9D3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7F26653123B0A1E50010301F /* Utils */,
 				7F54B37623AB8E59000CB9D3 /* Entities */,
 				7F54B3A423AB942F000CB9D3 /* CoreDataStorage.swift */,
 				7F54B3A623AB949B000CB9D3 /* CoreDataModel.xcdatamodeld */,
@@ -448,12 +473,14 @@
 			files = (
 				7FCD99AC23ACC9E400E92CC5 /* MoviesSceneDIContainer.swift in Sources */,
 				7F54B38923AB9091000CB9D3 /* ItemsUseCase.swift in Sources */,
+				7F26653323B0A2080010301F /* NSManagedObject+stringName.swift in Sources */,
 				7F54B3AF23AB9535000CB9D3 /* CDItemData+CoreDataClass.swift in Sources */,
 				7F54B38723AB9080000CB9D3 /* UIItemData.swift in Sources */,
 				7F54B38B23AB90BF000CB9D3 /* EditItemViewModel.swift in Sources */,
 				7F54B3A223AB92E8000CB9D3 /* ItemConverter.swift in Sources */,
 				7F54B3B623ABB3F4000CB9D3 /* UIError.swift in Sources */,
 				7F54B38223AB9006000CB9D3 /* ItemsAPI.swift in Sources */,
+				7F26653023B099430010301F /* AppNotificationCenter.swift in Sources */,
 				7F54B39723AB91DC000CB9D3 /* ItemsListViewController.swift in Sources */,
 				7FCD99A823ACC6CC00E92CC5 /* StoryboardInstantiable.swift in Sources */,
 				7F54B39523AB91CE000CB9D3 /* ItemDetailsViewController.swift in Sources */,
@@ -466,6 +493,7 @@
 				7F54B39923AB91FF000CB9D3 /* ItemsListViewModel.swift in Sources */,
 				7FCD99B023ACCC3600E92CC5 /* ItemsListRouter.swift in Sources */,
 				7F54B3B423ABB3D3000CB9D3 /* ErrorConverter.swift in Sources */,
+				7F26652D23B098400010301F /* AppNotificationsUseCase.swift in Sources */,
 				7FCD99B623ACCCF500E92CC5 /* EditItemRouter.swift in Sources */,
 				7FCD99B323ACCCDF00E92CC5 /* ItemDetailsRouter.swift in Sources */,
 				7F54B39F23AB92AE000CB9D3 /* ItemsListDataSource.swift in Sources */,

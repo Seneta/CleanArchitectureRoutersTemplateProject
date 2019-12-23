@@ -11,18 +11,22 @@ import UIKit
 protocol ItemDetailsViewModel {
     var item: UIItemData { get }
     func refreshData(closure: @escaping ( UIError?) -> Void)
+    var didUpdateData: (() -> Void)? { get set }
 }
 
 class DefaultItemDetailsViewModel: ItemDetailsViewModel {
-    
-    
     private let itemsUseCase: ItemsUseCase
-    
     private(set) var item: UIItemData
+    
+    var didUpdateData: (() -> Void)?
+    
+    private let notificationCenter = NotificationCenter.default
+    
     
     init(itemsUseCase: ItemsUseCase, item: UIItemData) {
         self.itemsUseCase = itemsUseCase
         self.item = item
+        notificationCenter.addObserver(self, selector: #selector(didReceiveRefreshNotification(_:)), name: AppNotificationType.updateItem.name(), object: nil)
     }
     
     func refreshData(closure: @escaping ( UIError?) -> Void) {
@@ -40,6 +44,17 @@ class DefaultItemDetailsViewModel: ItemDetailsViewModel {
             }
             
             closure(error)
+        }
+    }
+    
+    @objc func didReceiveRefreshNotification(_ notification: Notification) {
+        if let itemId = notification.userInfo?["itemId"] as? String {
+            if itemId == item.id {
+                refreshData { [weak self] (error) in
+                    guard let self = self else { return }
+                    self.didUpdateData?()
+                }
+            }
         }
     }
 }

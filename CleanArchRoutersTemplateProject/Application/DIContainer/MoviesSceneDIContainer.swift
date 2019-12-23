@@ -11,6 +11,7 @@ import SwiftUI
 public class ItemsSceneDIContainer {
     // MARK: - Persistent Storage
     lazy var itemsStorage: ItemsCDStorage = CoreDataStorage()
+    lazy var cdChangesNotificationCenter = CDChangesNotificationCenter()
     
     init() {}
     
@@ -58,6 +59,7 @@ extension ItemsSceneDIContainer: ItemDetailsVCsFactory {
     func makeItemDetailsRouter() -> ItemDetailsRouter {
         return ItemDetailsRouter(itemDetailsVCsFactory: self)
     }
+
 }
 
 extension ItemsSceneDIContainer: EditItemVCsFactory {

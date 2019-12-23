@@ -7,70 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A3CDEBA8-EE07-40D0-96DA-3731C0B0AE92"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CleanArchRoutersTemplateProject/Presentation/Utils/StoryboardInstantiable.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "instantiateViewController(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5788048D-4231-4912-840A-559779487053"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CleanArchRoutersTemplateProject/Presentation/ItemDetailsScene/ViewModel/ItemDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "init(itemsUseCase:item:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "272E4354-9601-41C1-9FA0-BB8C1E5C5EA6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CleanArchRoutersTemplateProject/Presentation/ItemDetailsScene/ViewModel/ItemDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "refreshData(closure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B66EDEEB-4C43-4374-8DD9-10A00204ABE6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CleanArchRoutersTemplateProject/Presentation/ItemDetailsScene/ViewModel/ItemDetailsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "refreshData(closure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9E391F18-38AD-4AD5-B713-3A0E5E44DC91"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -78,26 +14,58 @@
             filePath = "CleanArchRoutersTemplateProject/Domain/UseCases/ItemsUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "getItem(requestValue:closure:)"
-            landmarkType = "7">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "DefaultItemsUseCase"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "57939572-91A7-4988-8E31-B39AB8AD9DEE"
+            uuid = "25307785-4BD8-433F-BB3A-C16BD265ABC6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CleanArchRoutersTemplateProject/Domain/Converters/ItemConverter.swift"
+            filePath = "CleanArchRoutersTemplateProject/Presentation/ItemDetailsScene/View/ItemDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "convertToItem(_:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "refreshData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25307785-4BD8-433F-BB3A-C16BD265ABC6 - 986555805eb3a363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CleanArchRoutersTemplateProject.ItemDetailsViewController.(refreshData in _6F349D6D8B2D40311FC416508ADC2988)() -&gt; ()"
+                  moduleName = "CleanArchRoutersTemplateProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user6/CleanArchRoutersTemplateProject/CleanArchRoutersTemplateProject/Presentation/ItemDetailsScene/View/ItemDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "25307785-4BD8-433F-BB3A-C16BD265ABC6 - 4d58c333249dfc8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;CleanArchRoutersTemplateProject.UIError&gt;) -&gt; () in CleanArchRoutersTemplateProject.ItemDetailsViewController.(refreshData in _6F349D6D8B2D40311FC416508ADC2988)() -&gt; ()"
+                  moduleName = "CleanArchRoutersTemplateProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user6/CleanArchRoutersTemplateProject/CleanArchRoutersTemplateProject/Presentation/ItemDetailsScene/View/ItemDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -19,9 +19,14 @@ class ItemDetailsViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    private var needRefreshUI = false
+    
     class func create(with viewModel: ItemDetailsViewModel, router: ItemDetailsRouter) -> ItemDetailsViewController {
         let view = ItemDetailsViewController.instantiateViewController()
         view.viewModel = viewModel
+        
+        view.viewModel.didUpdateData = view.didUpdateData
+        
         view.router = router
         return view
     }
@@ -29,14 +34,25 @@ class ItemDetailsViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        refreshData()
+        if needRefreshUI {
+            needRefreshUI = false
+            updateUI()
+        }
+        
+    }
+    
+    func didUpdateData() {
+        if viewIfLoaded?.window != nil {
+            updateUI()
+        } else {
+            needRefreshUI = true
+        }
     }
     
     private func updateUI() {
@@ -48,6 +64,8 @@ class ItemDetailsViewController: UIViewController, StoryboardInstantiable {
     @IBAction func editTapped(_ sender: Any) {
         router.presentEditItem(with: viewModel.item)
     }
+    
+    
     
     private func refreshData() {
         viewModel.refreshData { [weak self] error in

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ItemsAPIService: class {
     static func getItem(id: String, closure: @escaping (APIItemData?, Error?) -> Void )
@@ -20,6 +21,7 @@ protocol ItemsCDStorage {
     func getItems(closure: @escaping ([CDItemData]?) -> Void )
     func createItem() -> CDItemData?
     func saveChanges()
+    var context: NSManagedObjectContext { get }
 }
 
 protocol ItemsUseCase {
@@ -32,6 +34,7 @@ protocol ItemsUseCase {
 class DefaultItemsUseCase: ItemsUseCase {
     private var itemsAPIService: ItemsAPIService.Type
     private var itemsCDStorage: ItemsCDStorage
+    private let notificationCenter = NotificationCenter.default
     
     private let itemConverter: ItemConverter
     private let errorConverter: ErrorConverter
@@ -126,6 +129,10 @@ class DefaultItemsUseCase: ItemsUseCase {
                     self.itemsCDStorage.saveChanges()
                 }
                 
+                if let itemID = apiItem.id {
+                    self.sendUpdateItemNotification(itemId: itemID)
+                }
+                
                 closure(item, nil)
             } else {
                 closure(nil, nil)
@@ -157,6 +164,7 @@ class DefaultItemsUseCase: ItemsUseCase {
                     }
                     
                     self.itemsCDStorage.saveChanges()
+                    self.sendUpdateItemNotification(itemId: requestValue.itemId)
                     closure(item, nil)
                 }
                 
@@ -167,7 +175,11 @@ class DefaultItemsUseCase: ItemsUseCase {
         }
     }
     
-    
+    private func sendUpdateItemNotification(itemId: String) {
+        let notification = Notification(name: AppNotificationType.updateItem.name(), object: nil, userInfo: ["itemId": itemId])
+        notificationCenter.post(notification)
+    }
+
 }
 
 struct GetItemUseCaseRequest {
@@ -181,5 +193,11 @@ struct CreateItemUseCaseRequest {
 struct UpdateItemUseCaseRequest {
     let itemId: String
     let item: UIItemData
+}
+
+struct MakeUpdateItemObserverRequest {
+    let observer: Any
+    let selector: Selector
+    let itemId: String
 }
 
